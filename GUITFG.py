@@ -31,7 +31,7 @@ class LayerOptionsDialog(QDialog):
         layout.addRow("Grosor de capa:", self.layer_thickness_input)
         layout.addRow("Grosor de primera capa:", self.first_layer_thickness_input)
 
-        # ✅ Botones Aceptar / Cancelar
+        # Botones Aceptar / Cancelar
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
@@ -268,7 +268,7 @@ class MainWindow(QMainWindow):
         self.options_button.clicked.connect(self.open_layer_options)
         options_layout.addWidget(self.options_button)
 
-        # ✅ Checkbox para elegir modo optimizado
+        #  Checkbox para elegir modo optimizado
         self.optimized_checkbox = QCheckBox("Usar slicing optimizado")
         self.optimized_checkbox.stateChanged.connect(self.on_checkbox_toggled)
         # coloca el checkbox y el botón "Separar componentes" en la misma fila,
@@ -979,4 +979,5 @@ if __name__ == "__main__":
     window = MainWindow(slicer_settings)
     window.resize(1200, 800)
     window.show()
+
     app.exec_()
